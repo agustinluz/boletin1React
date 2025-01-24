@@ -43,7 +43,7 @@ function App() {
             className="accordion-header"
             onClick={() => ejercicios(1)}
           >
-            <h2>Ejercicio 2: Resta de dos números</h2>
+            <h2>Ejercicio 2: Elegir un numero de la semana</h2>
           </div>
           {openIndex === 1 && (
             <div className="accordion-body">
@@ -58,7 +58,7 @@ function App() {
             className="accordion-header"
             onClick={() => ejercicios(2)}
           >
-            <h2>Ejercicio 3: Multiplicación de dos números</h2>
+            <h2>Ejercicio 3: Sincronizacion de inputs</h2>
           </div>
           {openIndex === 2 && (
             <div className="accordion-body">
