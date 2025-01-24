@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css'; // Archivo donde pondremos los estilos
 import Ejercicio1 from './components/ejercicio1'
 import Ejercicio2 from './components/ejercicio2'
+import Ejercicio3 from './components/ejericicio3'
 
 function App() {
   // Esta es una forma de guardar qué sección (o ejercicio) está abierta
@@ -61,9 +62,7 @@ function App() {
           </div>
           {openIndex === 2 && (
             <div className="accordion-body">
-              Aquí va la solución del ejercicio 3.
-              <br />
-              <code>{`const multiplicarNumeros = () => alert(numero1 * numero2);`}</code>
+              <Ejercicio3/>
             </div>
           )}
         </div>
