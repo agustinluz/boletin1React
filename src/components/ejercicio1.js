@@ -33,21 +33,21 @@ class Ejercicio1 extends Component {
       <div>
         <h1>Suma de dos números</h1>
 
-        {/* Aquí ponemos el primer número */}
+        
         <input
           type="number" // El input solo acepta números
           value={numero1} // Mostramos el valor actual de numero1
           onChange={(e) => this.handleInputChange(e, 'numero1')} // Actualizamos numero1 cuando el usuario escribe algo
         />
 
-        {/* Aquí ponemos el segundo número */}
+      
         <input
           type="number" // El input solo acepta números
           value={numero2} // Mostramos el valor actual de numero2
           onChange={(e) => this.handleInputChange(e, 'numero2')} // Actualizamos numero2 cuando el usuario escribe algo
         />
 
-        {/* Botón para hacer la suma */}
+        
         <button onClick={this.sumarNumeros}>Sumar</button>
       </div>
     );

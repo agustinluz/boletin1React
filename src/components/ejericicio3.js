@@ -19,7 +19,7 @@ class Ejercicio3 extends Component {
       <div>
         <h1>Sincronizar dos inputs</h1>
         
-        {/* Primer input: editable y su valor se sincroniza con el estado 'texto' */}
+        
         <input 
           type="text" 
           value={this.state.texto}  // El valor de este input es el valor del estado 'texto'
@@ -27,7 +27,7 @@ class Ejercicio3 extends Component {
           placeholder="Escribe algo"  // Texto que aparece cuando el input está vacío
         />
         
-        {/* Segundo input: editable y su valor también se sincroniza con el estado 'texto' */}
+        
         <input 
           type="text" 
           value={this.state.texto}  // Muestra el mismo valor que el primer input
