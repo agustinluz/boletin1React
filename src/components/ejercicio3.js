@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+super(props);
 
 class Ejercicio3 extends Component {
   // Definimos el estado 'texto' en el constructor de la clase
   constructor(props) {
-    super(props);
     this.state = {
       texto: ''
     };
