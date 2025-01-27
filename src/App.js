@@ -3,6 +3,9 @@ import './App.css'; // Archivo donde pondremos los estilos
 import Ejercicio1 from './components/ejercicio1'
 import Ejercicio2 from './components/ejercicio2'
 import Ejercicio3 from './components/ejercicio3'
+import Ejercicio4 from './components/ejercicio4'
+import Ejercicio5 from './components/ejercicio5'
+import Ejercicio6 from './components/ejercicio6'
 
 function App() {
   // Esta es una forma de guardar qué sección (o ejercicio) está abierta
@@ -63,6 +66,20 @@ function App() {
           {openIndex === 2 && (
             <div className="accordion-body">
               <Ejercicio3/>
+            </div>
+          )}
+        </div>
+        {/* Ejercicio 4 */}
+        <div className="accordion-item">
+          <div
+            className="accordion-header"
+            onClick={() => ejercicios(3)}
+          >
+            <h2>Ejercicio 4: Sincronizacion de inputs</h2>
+          </div>
+          {openIndex === 3 && (
+            <div className="accordion-body">
+              <Ejercicio4/>
             </div>
           )}
         </div>
