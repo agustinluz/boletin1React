@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css'; // Archivo donde pondremos los estilos
 import Ejercicio1 from './components/ejercicio1'
 import Ejercicio2 from './components/ejercicio2'
-import Ejercicio3 from './components/ejericicio3'
+import Ejercicio3 from './components/ejercicio3'
 
 function App() {
   // Esta es una forma de guardar qué sección (o ejercicio) está abierta

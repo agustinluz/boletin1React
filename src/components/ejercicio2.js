@@ -25,7 +25,7 @@ class Ejercicio2 extends Component {
           <option value="Sábado">Sábado</option>
           <option value="Domingo">Domingo</option>
         </select>
-        <p>{this.state.dia ? `Has seleccionado: ${this.state.dia}` : 'Aún no has seleccionado ningún día'}</p>
+        <p>{this.state.dia ? 'Has seleccionado: ${this.state.dia}' : 'Aún no has seleccionado ningún día'}</p>
       </div>
     );
   }
