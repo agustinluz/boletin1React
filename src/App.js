@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css'; // Archivo donde pondremos los estilos
+import './App.css'; 
 import Ejercicio1 from './components/ejercicio1'
 import Ejercicio2 from './components/ejercicio2'
 import Ejercicio3 from './components/ejercicio3'
@@ -80,6 +80,34 @@ function App() {
           {openIndex === 3 && (
             <div className="accordion-body">
               <Ejercicio4/>
+            </div>
+          )}
+        </div>
+        {/* Ejercicio 5 */}
+        <div className="accordion-item">
+          <div
+            className="accordion-header"
+            onClick={() => ejercicios(4)}
+          >
+            <h2>Ejercicio 5: TIRADA DE DADOS</h2>
+          </div>
+          {openIndex === 4 && (
+            <div className="accordion-body">
+              <Ejercicio5/>
+            </div>
+          )}
+        </div>
+        {/* Ejercicio 6 */}
+        <div className="accordion-item">
+          <div
+            className="accordion-header"
+            onClick={() => ejercicios(5)}
+          >
+            <h2>EJERCICIO 6: Partida de dados</h2>
+          </div>
+          {openIndex === 5 && (
+            <div className="accordion-body">
+              <Ejercicio6/>
             </div>
           )}
         </div>
