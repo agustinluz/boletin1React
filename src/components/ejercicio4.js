@@ -32,6 +32,7 @@ class Factura extends Component {
   };
 
   // Método para manejar el cambio de la cantidad
+
   handleCantidadChange = (e) => {
     this.setState({ cantidad: Number(e.target.value) });
   };
