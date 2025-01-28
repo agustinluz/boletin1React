@@ -1,52 +1,61 @@
-import React, { useState } from 'react';
-import Dice from './ejercicio5';
+import React, { Component } from "react";
+import "./Calculator.css";
 
-function Game() {
-  const [players, setPlayers] = useState([]);
-  const [rounds, setRounds] = useState(5);
-  const [currentRound, setCurrentRound] = useState(1);
-  const [scores, setScores] = useState([]);
-  const [turn, setTurn] = useState(0);
+class Calculator extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: "0",
+    };
+  }
 
-  const handleAddPlayer = (name) => {
-    setPlayers([...players, { name, score: 0 }]);
-  };
+  handleClick(value) {
+    const { input } = this.state;
+    if (value === "CE") {
+      this.setState({ input: "0" });
+    } else if (value === "=") {
+      try {
+        this.setState({ input: eval(input).toString() });
+      } catch {
+        this.setState({ input: "Error" });
+      }
+    } else {
+      if (input === "0") {
+        this.setState({ input: value });
+      } else {
+        this.setState({ input: input + value });
+      }
+    }
+  }
 
-  const rollForPlayer = () => {
-    const roll = Math.floor(Math.random() * 6) + 1;
-    const updatedPlayers = [...players];
-    updatedPlayers[turn].score += roll;
-    setPlayers(updatedPlayers);
-    setTurn((prev) => (prev + 1) % players.length);
-    if (turn === players.length - 1) setCurrentRound((prev) => prev + 1);
-  };
+  render() {
+    const { input } = this.state;
 
-  const sortedPlayers = [...players].sort((a, b) => b.score - a.score);
-
-  return (
-    <div>
-      <h1>Juego de Dados</h1>
-      <button onClick={() => handleAddPlayer(`Jugador ${players.length + 1}`)}>
-        Añadir jugador
-      </button>
-      <p>Jugadores: {players.map((p) => p.name).join(', ')}</p>
-      {currentRound <= rounds ? (
-        <div>
-          <p>Ronda: {currentRound}</p>
-          <button onClick={rollForPlayer}>Tirar para {players[turn]?.name}</button>
+    return (
+      <div className="calculator">
+        <div className="display">{input}</div>
+        <div className="buttons">
+          <button onClick={() => this.handleClick("1")}>1</button>
+          <button onClick={() => this.handleClick("2")}>2</button>
+          <button onClick={() => this.handleClick("3")}>3</button>
+          <button onClick={() => this.handleClick("/")}>/</button>
+          <button onClick={() => this.handleClick("4")}>4</button>
+          <button onClick={() => this.handleClick("5")}>5</button>
+          <button onClick={() => this.handleClick("6")}>6</button>
+          <button onClick={() => this.handleClick("*")}>x</button>
+          <button onClick={() => this.handleClick("7")}>7</button>
+          <button onClick={() => this.handleClick("8")}>8</button>
+          <button onClick={() => this.handleClick("9")}>9</button>
+          <button onClick={() => this.handleClick("-")}>-</button>
+          <button onClick={() => this.handleClick("0")}>0</button>
+          <button onClick={() => this.handleClick(".")}>.</button>
+          <button onClick={() => this.handleClick("=")} className="green">=</button>
+          <button onClick={() => this.handleClick("+")}>+</button>
+          <button onClick={() => this.handleClick("CE")} className="red">CE</button>
         </div>
-      ) : (
-        <div>
-          <h2>Clasificación Final:</h2>
-          {sortedPlayers.map((p, i) => (
-            <p key={i}>
-              {i + 1}. {p.name}: {p.score} puntos
-            </p>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
-export default Game;
+export default Calculator;

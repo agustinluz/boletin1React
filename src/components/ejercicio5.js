@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 
-function Dice() {
-  const [result, setResult] = useState(null);
+class Dice extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      result: null,
+    };
+  }
 
-  const rollDice = () => {
-    setResult(Math.floor(Math.random() * 6) + 1);
+  rollDice = () => {
+    this.setState({ result: Math.floor(Math.random() * 6) + 1 });
   };
 
-  return (
-    <div>
-      <button onClick={rollDice}>Lanzar dado</button>
-      {result && <p>Resultado: {result}</p>}
-    </div>
-  );
+  render() {
+    const { result } = this.state;
+
+    return (
+      <div>
+        <button onClick={this.rollDice}>Lanzar dado</button>
+        {result && <p>Resultado: {result}</p>}
+      </div>
+    );
+  }
 }
 
 export default Dice;
